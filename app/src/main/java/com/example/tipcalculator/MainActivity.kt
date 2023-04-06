@@ -19,11 +19,15 @@ class MainActivity : AppCompatActivity() {
 
         calBtn.setOnClickListener {
             calculate()
+            clear()
         }
 
     }
 
     private fun calculate(){
+
+    }
+    private fun clear(){
 
     }
 
