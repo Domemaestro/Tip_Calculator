@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/billTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="92dp"
+        android:text="Bill ₹"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/billEt"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="90dp"
+        android:hint="Billing Amount"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toBottomOf="@+id/billTV"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.967"
+        app:layout_constraintStart_toEndOf="@+id/billTV"
+        app:layout_constraintTop_toTopOf="@+id/billTV"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/tipTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Tip %"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="@+id/billTV"
+        app:layout_constraintHorizontal_bias="0.478"
+        app:layout_constraintStart_toStartOf="@+id/billTV"
+        app:layout_constraintTop_toBottomOf="@+id/billTV" />
+
+    <EditText
+        android:id="@+id/tipEt"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:hint="Enter Tip percent"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toBottomOf="@+id/tipTV"
+        app:layout_constraintEnd_toEndOf="@+id/billEt"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/tipTV"
+        app:layout_constraintTop_toTopOf="@+id/tipTV"
+        app:layout_constraintVertical_bias="0.466" />
+
+    <TextView
+        android:id="@+id/splitBillTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Split Bill ?"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="@+id/tipTV"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tipTV"
+        app:layout_constraintTop_toBottomOf="@+id/tipTV" />
+
+    <EditText
+        android:id="@+id/splitBillEt"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:hint="No. of people"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toBottomOf="@+id/splitBillTV"
+        app:layout_constraintEnd_toEndOf="@+id/tipEt"
+        app:layout_constraintStart_toEndOf="@+id/splitBillTV"
+        app:layout_constraintTop_toTopOf="@+id/splitBillTV" />
+
+    <Button
+        android:id="@+id/calBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="60dp"
+        android:text="Calclate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/splitBillTV"
+        app:layout_constraintTop_toBottomOf="@+id/splitBillEt" />
+
+    <Button
+        android:id="@+id/clearBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="Clear"
+        app:layout_constraintBottom_toBottomOf="@+id/calBtn"
+        app:layout_constraintEnd_toStartOf="@+id/calBtn"
+        app:layout_constraintHorizontal_bias="0.547"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/calBtn" />
+
+    <TextView
+        android:id="@+id/displayTv"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/calBtn"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/clearBtn"
+        app:layout_constraintTop_toBottomOf="@+id/calBtn"
+        app:layout_constraintVertical_bias="0.336" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
