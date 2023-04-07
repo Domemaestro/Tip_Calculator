@@ -13,4 +13,5 @@ Thank you for checking out this project and happy coding!
 
 This is what the app looks like:
 
-![image](https://user-images.githubusercontent.com/62145475/230558809-5fad94b1-158d-431d-a117-43cbdf5e172e.png)
+![image](https://user-images.githubusercontent.com/62145475/230558990-62d8083f-6f1d-4222-9220-6bfe76c6c9f1.png)
+
