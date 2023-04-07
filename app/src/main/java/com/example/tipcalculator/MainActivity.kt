@@ -39,28 +39,33 @@ class MainActivity : AppCompatActivity() {
 
     private fun calculate(){
         val stringInput = billAmount.text.toString()
-        val cost = stringInput.toDouble()
+        val cost = stringInput.toDouble() //Converting Input String to Double
 
         val stringInput2 = tipPercent.text.toString()
-        val tipPercen = stringInput2.toDouble()
+        val tipPercen = stringInput2.toDouble() //Converting Input String to Double
 
-        var stringInput3 = splitNo.text.toString()
-        val noOfPeople = stringInput3.toDouble()
+        val stringInput3 = splitNo.text.toString()
+        val noOfPeople = stringInput3.toDouble() //Converting Input String to Double
 
 
-        val tipResult = cost * (tipPercen/100)
-        val amountSplit = cost / noOfPeople
-        val finalAmount = cost + tipResult
+        val tipResult = cost * (tipPercen/100) //Formula to Calculate Tip
+        val amountSplit = cost / noOfPeople //Splitting per Person
+        val finalAmount = cost + tipResult //Final Display Amount
+        val finalSplit = amountSplit + tipResult //Final Split Amount
 
+        //formatting to local currency
         val formatTip = NumberFormat.getCurrencyInstance().format(tipResult)
         val formatCost = NumberFormat.getCurrencyInstance().format(cost)
-        val formatSplit = NumberFormat.getCurrencyInstance().format(amountSplit)
-        displayResult.text = "Answer:\n\n" + "   " + "Bill Amount + Tip %: "+ formatCost.toString() + " + " + formatTip.toString() + " = " + finalAmount.toString() + "\n\n" + "   " + "Split Amount Per Person: " + formatSplit.toString()
+        val formatFinal = NumberFormat.getCurrencyInstance().format(finalAmount)
+        val formatSplit = NumberFormat.getCurrencyInstance().format(finalSplit)
+        displayResult.text = "Answer:\n\n" + "   " + "Bill Amount + Tip %: "+ formatCost.toString() + " + " + formatTip.toString() + " = " + formatFinal.toString() + "\n\n" + "   " + "Split Amount Per Person: " + formatSplit.toString()
 
 
 
     }
     private fun clear(){
+        billAmount.text.clear()
+        tipPercent.text.clear()
 
     }
 
