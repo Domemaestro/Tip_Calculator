@@ -6,6 +6,8 @@ import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import java.text.NumberFormat
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
     private lateinit var billAmount : EditText
@@ -42,8 +44,18 @@ class MainActivity : AppCompatActivity() {
         val stringInput2 = tipPercent.text.toString()
         val tipPercen = stringInput2.toDouble()
 
+        var stringInput3 = splitNo.text.toString()
+        val noOfPeople = stringInput3.toDouble()
+
+
         val tipResult = cost * (tipPercen/100)
-        displayResult.text = tipResult.toString()
+        val amountSplit = cost / noOfPeople
+        val finalAmount = cost + tipResult
+
+        val formatTip = NumberFormat.getCurrencyInstance().format(tipResult)
+        val formatCost = NumberFormat.getCurrencyInstance().format(cost)
+        val formatSplit = NumberFormat.getCurrencyInstance().format(amountSplit)
+        displayResult.text = "Answer:\n\n" + "   " + "Bill Amount + Tip %: "+ formatCost.toString() + " + " + formatTip.toString() + " = " + finalAmount.toString() + "\n\n" + "   " + "Split Amount Per Person: " + formatSplit.toString()
 
 
 
